@@ -10,10 +10,15 @@ export class DataService {
 
     private data: any;
 
-    constructor(public http: HttpClient) {
-        this.getPromiseData().then( res => {
+    constructor(public http: HttpClient) { }
+
+    public load() :Promise<any>  {
+
+        const promise = this.getPromiseData().then( res => {
             this.data = res;
         });
+  
+        return promise;
     }
 
     private getPromise(file: string): Promise<any> {
