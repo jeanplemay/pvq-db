@@ -17,13 +17,12 @@ node {
 jar.dependsOn 'npm_run_build'
 
 jar {
-    from 'src-backend' into ''
     from 'dist/pvq-db' into ''
 }
 
 task createProperties(dependsOn: processResources) {
     doLast {
-        new File("$projectDir/src-backend/info.txt").withWriter { w ->
+        new File("$projectDir/info.txt").withWriter { w ->
             Properties p = new Properties()
             p['version'] = project.version.toString()
             p['group'] = project.group.toString()
