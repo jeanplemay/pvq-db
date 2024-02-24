@@ -1,0 +1,29 @@
+.header{
+    position: fixed;
+    z-index: 10;
+    height: 60px;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--blue);
+}
+
+.title {
+    font-size: 20px;
+    color: white;
+}
+
+.navbar-separator {
+    color : white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navbar-link {
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-active {
+    color: white;
+}

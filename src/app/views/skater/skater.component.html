@@ -1,0 +1,62 @@
+<h3>{{this.patineur.nom}}, {{this.patineur.prenom}}</h3>
+
+<div><b>Club / Centre d'entraînement : </b>{{this.patineur.club}}</div>
+<div><b>Catégorie : </b>{{this.patineur.categorie}}</div>
+<div><b>Sexe : </b>{{this.patineur.sexe}}</div>
+<div><b>Statut : </b>{{this.patineur.statut}}</div> 
+<br>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Compétition</th>
+        <th scope="col">Date</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let compe of this.compes">
+        <tr style="vertical-align: middle">
+            <th scope="row">{{compe.nom}}</th>
+            <td>{{compe.date}}</td>
+            <td>
+                <button class="btn btn-outline-primary" type="button"
+                        data-bs-toggle="collapse" [attr.data-bs-target]="'#c'+compe.numero">
+                    <i class="fa fa-solid fa-caret-down"></i>
+                </button>
+            </td>
+        </tr>
+
+        <tr class="collapse" [id]="'c'+compe.numero">
+            <td colspan="5" style="padding-left: 30px; padding-right: 30px">
+                <table class="table table-sm table-striped" style="max-width: 700px">
+                    <thead>
+                    <tr>
+                        <th scope="col">Vague</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Bonnet</th>
+                        <th scope="col">Rang</th>
+                        <th scope="col">Temps</th>
+                        <th scope="col">Points</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let pv of this.getPatVagues(compe); let i = index">
+                            <th scope="row">{{pv.numero_vague}}</th>
+                            <td>{{pv.vague.description}}</td>
+                            <td>{{pv.casque}}</td>
+                            <td>{{pv.rang}}</td>
+                            <td>{{pv.temps | timeFormatter }} 
+                                <span>{{pv.officiel | penalityFormatter }}</span>
+                            </td>
+                            <td>{{pv.points | pointsFormatter}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+
+        </tr>
+    </ng-container>
+
+    </tbody>
+</table>

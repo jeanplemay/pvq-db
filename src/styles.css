@@ -1,0 +1,29 @@
+:root {
+    --red:#e61837;
+    --blue:#0062a6;
+    --grey:#3f5364;
+}
+
+.btn {
+    margin: 5px;
+}
+
+.btn-primary {
+    background-color: var(--blue);
+    border-color: var(--blue);
+}
+
+.btn-outline-primary {
+    color: var(--blue);
+    border-color: var(--blue);
+    margin: 0px;
+}
+
+.selected {
+    background-color: var(--blue);
+    color: white;
+}
+
+h3, h4 {
+    text-align: center;
+}

@@ -1,0 +1,15 @@
+*.gradle/
+*.idea/
+*build/
+*gradle/
+*bin/
+*.vscode/
+
+/src-backend/info.txt 
+
+*dist/
+*node_modules/
+*target/
+*.angular/
+
+data/*

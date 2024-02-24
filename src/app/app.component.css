@@ -1,0 +1,11 @@
+.page-container {
+    position: relative;
+    top: 60px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 20px;
+    margin: 0px;
+    max-width: 100%;
+    max-height: calc(100% - 60px);
+}

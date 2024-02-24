@@ -1,0 +1,32 @@
+<table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Numéro</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Sexe</th>
+            <th scope="col">Catégorie</th>
+            <th scope="col">Statut</th>
+            <th scope="col">Club</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let skater of this.patineurs">
+            <td>{{skater.numero}}</td>
+            <td>{{skater.nom}}</td>
+            <td>{{skater.prenom}}</td>
+            <td>{{skater.sexe}}</td>
+            <td>{{skater.categorie }}</td>
+            <td>{{skater.statut }}</td>
+            <td>{{skater.club }}</td>
+            <td>
+                <button class="btn btn-outline-primary" type="button" [routerLink]="'/skater/' + skater.numero">
+                    <i class="fa fa-solid fa-list"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+

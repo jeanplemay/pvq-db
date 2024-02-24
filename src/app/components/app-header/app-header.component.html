@@ -1,0 +1,8 @@
+<div class="header">
+    <span class="title" *ngIf="getHeaderLinks().length == 0">Base de données des résultats</span>
+    <span *ngFor="let link of getHeaderLinks()">
+        <span class="navbar-separator fa fa-caret-right"></span>
+        <span class="navbar-link" *ngIf="link.path != null" (click)="changeLocation(link.path)">{{link.name}}</span>
+        <span class="navbar-active" *ngIf="link.path == null">{{link.name}}</span>
+    </span>
+</div>
