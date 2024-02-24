@@ -11,7 +11,9 @@ export class DataService {
     private data: any;
 
     constructor(public http: HttpClient) {
-        this.getData();
+        this.getPromiseData().then( res => {
+            this.data = res;
+        });
     }
 
     private getPromise(file: string): Promise<any> {
@@ -19,8 +21,8 @@ export class DataService {
         return lastValueFrom(this.http.get<any>(environment.apiUrl + 'data/' + file + '?' + salt));
     }
 
-    private async getData(): Promise<any> {
-        this.data = await this.getPromise("pvq-db.json");
+    public getPromiseData(): Promise<any> {
+        return this.getPromise("pvq-db.json");
     }
 
     public getCompes(): any {
